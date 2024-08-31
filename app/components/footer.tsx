@@ -18,6 +18,7 @@ function ArrowIcon() {
 export default function Footer() {
   return (
     <footer className="mb-16">
+      <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
       <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
         <li>
           <a
@@ -53,6 +54,7 @@ export default function Footer() {
           </a>
         </li>
       </ul>
+      <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
       <p className="mt-8 text-neutral-600 dark:text-neutral-300">
         © {new Date().getFullYear()} - Rohan Kumawat. Original portions licensed under the MIT License.
       </p>
