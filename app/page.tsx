@@ -1,6 +1,8 @@
 import { BlogPosts } from 'app/components/posts'
 import Image from 'next/image';
 import first from 'public/images/home/first.jpeg'
+import React from 'react';
+import TypingEffect from '../app/components/typingEffect';
 
 export default function Page() {
   return (
@@ -9,11 +11,13 @@ export default function Page() {
         {/* Left Column */}
         <div>
           <h1 className="mb-4 text-4xl font-bold tracking-tight">Hi, I'm Rohan 👋</h1>
-          <p className="mb-4 text-xl font-light">
-            I’m a software developer, AI Engineer, Machine Learning Engineer, and Data Analyst.
-          </p>
+          <TypingEffect />
+          <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
           <p className="mb-8 text-md">
-            I love creating innovative software solutions and building AI models that solve real-world problems. Join me on this journey as I explore new technologies, develop exciting projects, and share my experiences along the way. 🚀
+            I love creating innovative software solutions and building AI models that solve real-world problems. 
+            <br />
+            <br />
+            Join me on this journey as I explore new technologies, develop exciting projects, and share my experiences along the way. 🚀
           </p>
         </div>
           {/* Right Column (Image) */}
