@@ -12,7 +12,7 @@ return (
                     Get in Touch 📨
             </h1>
         <p className="mb-4">
-            {`Got a burning question about my latest project, an idea for a wild collaboration, or just want to chat about the meaning of life (or coffee brewing techniques)? ☕️`}
+            {`Got a burning question about my latest project, an idea for a wild collaboration, or just want to chat about football (or coffee brewing techniques)? ☕️`}
             <br />
             <br />
             {`I'm always open to new conversations and exciting opportunities! Feel free to reach out to me via email, or `}
