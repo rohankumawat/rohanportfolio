@@ -1,6 +1,7 @@
 "use client"; // Mark as a client component
 
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -8,6 +9,8 @@ export default function Contact() {
     email: '',
     message: '',
   });
+
+  const [status, setStatus] = useState<string | null>(null); // To display feedback to the user
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -19,8 +22,27 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({ name: '', email: '', message: '' });
+
+    try {
+      // Sending the email using EmailJS
+      const result = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, // Replace with your EmailJS Service ID
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, // Replace with your EmailJS Template ID
+        formData,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! // Replace with your EmailJS Public Key (formerly user ID)
+      );
+
+      if (result.text === 'OK') {
+        setStatus('Email sent successfully!');
+      } else {
+        setStatus('Failed to send email. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setStatus('An error occurred. Please try again.');
+    }
+
+    setFormData({ name: '', email: '', message: '' }); // Reset the form after submission
   };
 
   return (
@@ -81,6 +103,7 @@ export default function Contact() {
           Send Message
         </button>
       </form>
+      {status && <p className="mt-4 text-center">{status}</p>} {/* Display status message */}
     </section>
   );
 }
