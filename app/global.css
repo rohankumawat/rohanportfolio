@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import '~devicon/devicon.min.css';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
 
 ::selection {
   background-color: #47a3f3;
