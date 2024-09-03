@@ -11,9 +11,12 @@ const navItems = {
   '/blog': {
     name: 'blog',
   },
+  '/resume': {
+    name: 'resume',
+  },
   '/contact': {
     name: 'contact',
-  }
+  },
 }
 
 export function Navbar() {
