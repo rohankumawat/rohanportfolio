@@ -8,11 +8,19 @@ const projects = [
   {
     id: "1",
     title: "Spotify Songs Dashboard",
-    description: "An interactive web app to analyze Spotify songs data using Streamlit...",
+    description: "An interactive web app to analyze Spotify songs data using Streamlit. Get insights into your favorite songs, artists, and popularity.",
     image: "/images/projects/spotifyProject.png",
     demoLink: "https://streamspotify.streamlit.app/",
     readMoreLink: "https://github.com/rohankumawat/spotifyStreamlit",
   },
+  {
+    id: "2",
+    title: "AI-Powered Credit Card Fraud Detection System",
+    description: "A Credit Card Fraud Detection System that utilizes machine learning techniques to detect fraudulent transactions.",
+    image: "/images/projects/creditCardFraud.png",
+    demoLink: "https://github.com/rohankumawat/creditCardFraudDetection",
+    readMoreLink: "https://github.com/rohankumawat/creditCardFraudDetection",
+  }
   // More projects...
 ];
 

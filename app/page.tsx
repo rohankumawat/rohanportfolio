@@ -3,8 +3,29 @@ import Image from 'next/image';
 import first from 'public/images/home/first.jpeg'
 import React from 'react';
 import TypingEffect from '../app/components/typingEffect';
+import { read } from 'fs';
 
 export default function Page() {
+  const projects = [
+    {
+      id: "1",
+      title: "Spotify Songs Dashboard",
+      description: "An interactive web app to analyze Spotify songs data using Streamlit. Get insights into your favorite songs, artists, and popularity.",
+      image: "/images/projects/spotifyProject.png",
+      demoLink: "https://streamspotify.streamlit.app/",
+      readMoreLink: "https://github.com/rohankumawat/spotifyStreamlit",
+    },
+    {
+      id: "2",
+      title: "AI-Powered Credit Card Fraud Detection System",
+      description: "A Credit Card Fraud Detection System that utilizes machine learning techniques to detect fraudulent transactions.",
+      image: "/images/projects/creditCardFraud.png",
+      demoLink: "https://github.com/rohankumawat/creditCardFraudDetection",
+      readMoreLink: "https://github.com/rohankumawat/creditCardFraudDetection",
+    },
+    // More projects...
+  ];
+
   return (
     <section className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -17,7 +38,7 @@ export default function Page() {
             I love creating innovative software solutions and building AI models that solve real-world problems. 
             <br />
             <br />
-            Join me on this journey as I explore new technologies, develop exciting projects, and share my experiences along the way. 🚀
+            From AI-driven systems and machine learning models and custom software development, I offer innovative solutions tailored to your business needs.
           </p>
           {/* Social Links Section */}
           <div className="flex space-x-4 mb-8">
@@ -63,7 +84,7 @@ export default function Page() {
 
       {/* Technologies I Work On Section */}
       <div className="my-16">
-        <h1 className="mb-8 text-4xl font-semibold tracking-tighter">Technologies I Work On 💻</h1>
+        <h1 className="mb-8 text-3xl font-semibold tracking-tighter">Technologies I Work On 💻</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
           {/* Programming Languages */}
@@ -117,6 +138,58 @@ export default function Page() {
             </div>
           </div>
 
+        </div>
+      </div>
+
+      <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
+
+      {/* Projects Section */}
+      <div className="my-16">
+        <h1 className="mb-8 text-3xl font-semibold tracking-tighter">Featured Work 🚀</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className="bg-white dark:bg-neutral-800 shadow-md rounded-lg overflow-hidden"
+            >
+              {/* Card Image */}
+              <div className="p-4">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  className="rounded-lg"
+                  width={500}
+                  height={300}
+                />
+              </div>
+              
+              {/* Card Content */}
+              <div className="px-4 py-2">
+                <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">
+                  {project.description}
+                </p>
+                <div className="flex space-x-4">
+                  <a
+                    href={project.demoLink}
+                    className="bg-blue-600 text-sm text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700 transition"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Live Demo
+                  </a>
+                  <a
+                    href={project.readMoreLink}
+                    className="bg-gray-200 text-sm text-gray-700 py-2 px-4 rounded-md shadow-md hover:bg-gray-300 transition dark:bg-neutral-700 dark:text-gray-200 dark:hover:bg-neutral-600"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
