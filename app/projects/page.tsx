@@ -20,6 +20,14 @@ const projects = [
     image: "/images/projects/creditCardFraud.png",
     demoLink: "https://github.com/rohankumawat/creditCardFraudDetection",
     readMoreLink: "https://github.com/rohankumawat/creditCardFraudDetection",
+  },
+  {
+    id: "3",
+    title: "DocuChatAI - Chat with your Documents",
+    description: "A web app that allows users to interact with their PDF documents using natural language processing.",
+    image: "/images/projects/docuChatProject.png",
+    demoLink: "https://docuchatlangchain.streamlit.app",
+    readMoreLink: "https://github.com/rohankumawat/docuChatAI",
   }
   // More projects...
 ];
@@ -40,7 +48,7 @@ export default function ProjectsPage() {
 
       <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
 
-      <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         {projects.map((project) => (
           <div
             key={project.id}

@@ -23,6 +23,14 @@ export default function Page() {
       demoLink: "https://github.com/rohankumawat/creditCardFraudDetection",
       readMoreLink: "https://github.com/rohankumawat/creditCardFraudDetection",
     },
+    {
+      id: "3",
+      title: "DocuChatAI - Chat with your Documents",
+      description: "A web app that allows users to interact with their PDF documents using natural language processing.",
+      image: "/images/projects/docuChatProject.png",
+      demoLink: "https://docuchatlangchain.streamlit.app",
+      readMoreLink: "https://github.com/rohankumawat/docuChatAI",
+    }
     // More projects...
   ];
 
